@@ -1,0 +1,13 @@
+<!-- school/add_student.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Add a Student</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+  <a href="{% url 'list_students' %}">Back to Student List</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>List of Schools</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">School Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for school in schools %}
+        <tr>
+          <td>{{ school.name }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{% url 'add_school' %}" class="btn btn-primary">Add a School</a>
+{% endblock %}
