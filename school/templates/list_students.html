@@ -5,15 +5,26 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Student Name</th>
+        <th scope="col">Name</th>
+        <th scope="col">Registration Number</th>
         <th scope="col">School</th>
+        <th scope="col">Course</th>
+        <th scope="col">Date of Admission</th>
+        <th scope="col">Actions</th>  <!-- Add a new column for actions -->
       </tr>
     </thead>
     <tbody>
       {% for student in students %}
         <tr>
           <td>{{ student.name }}</td>
+          <td>{{ student.registration_number }}</td>
           <td>{{ student.school.name }}</td>
+          <td>{{ student.course.name }}</td>
+          <td>{{ student.date_of_admission|date:"F d, Y" }}</td>
+          <td>
+            <a href="{% url 'edit_student' student.id %}" class="btn btn-warning">Edit</a>  <!-- Edit button -->
+            <a href="{% url 'delete_student' student.id %}" class="btn btn-danger">Delete</a>  <!-- Delete button -->
+          </td>
         </tr>
       {% endfor %}
     </tbody>

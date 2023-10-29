@@ -5,16 +5,27 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">School Name</th>
+        <th scope="col">Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Description</th>
+        <th scope="col">Established Date</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
       {% for school in schools %}
         <tr>
           <td>{{ school.name }}</td>
+          <td>{{ school.location }}</td>
+          <td>{{ school.description }}</td>
+          <td>{{ school.established_date|date:"F d, Y" }}</td>
+          <td>
+            <a href="{% url 'edit_school' school.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete_school' school.id %}" class="btn btn-danger">Delete</a>
+          </td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
-  <a href="{% url 'add_school' %}" class="btn btn-primary">Add a School</a>
-{% endblock %}
+  <a href="{% url 'add_school' %}" class="btn btn-success">Add a School</a>
+  {% endblock %}

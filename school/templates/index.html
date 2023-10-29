@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="text-center">University System</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Schools</h5>
+            <p class="card-text">Manage and view schools in the system.</p>
+            <a href="{% url 'list_schools' %}" class="btn btn-primary">List Schools</a>
+            <a href="{% url 'add_school' %}" class="btn btn-secondary">Add School</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Courses</h5>
+            <p class="card-text">Manage and view courses in the system.</p>
+            <a href="{% url 'list_courses' %}" class="btn btn-primary">List Courses</a>
+            <a href="{% url 'add_course' %}" class="btn btn-secondary">Add Course</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Students</h5>
+            <p class="card-text">Manage and view students in the system.</p>
+            <a href="{% url 'list_students' %}" class="btn btn-primary">List Students</a>
+            <a href="{% url 'add_student' %}" class="btn btn-secondary">Add Student</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+{% endblock %}
+
+{% block footer %}
+ <footer class="text-center text-muted position-fixed bottom-0 w-100 py-2">
+    <p>Maarau GDSC project 💜</p>
+  </footer>
+{% endblock %}
