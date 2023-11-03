@@ -52,6 +52,10 @@ DB_PORT=3306
 ```
 
 ## Database Setup
+You'll have to create a database first called `school`
+```sql
+CREATE DATABASE `school`;
+```
 
 Run the migrations to create the database schema:
 
